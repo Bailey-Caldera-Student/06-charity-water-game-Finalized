@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="game-shell">
-      <section id="startScreen" class="screen active">
+    <div class="page-wrapper">
+      <main class="game-shell">
+        <section id="startScreen" class="screen active">
         <div class="icon-bubble">⛏️</div>
         <div class="title-block">
           <h1 class="start-title">Water Drilling</h1>
@@ -68,7 +69,12 @@
         <p>Your final score is <strong id="finalScore">0</strong></p>
         <button id="playAgainBtn" class="primary-btn">Play Again</button>
       </section>
-    </main>
+      </main>
+
+      <footer class="site-footer">
+        <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">https://www.charitywater.org/</a>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
