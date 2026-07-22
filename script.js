@@ -336,7 +336,7 @@ buttonElements.beginGame.addEventListener('click', () => {
 });
 
 buttonElements.playAgain.addEventListener('click', () => {
-  startGame();
+  showScreen('howToPlay');
 });
 
 // Let the player move the drill on both desktop and mobile.
