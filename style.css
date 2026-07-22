@@ -188,6 +188,25 @@ li {
   padding: 0;
 }
 
+.difficulty-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e6e6e6;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.difficulty-picker select {
+  border: 1px solid #d7d7d7;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
 .primary-btn,
 .drill-btn {
   border: none;

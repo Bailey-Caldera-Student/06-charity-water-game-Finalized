@@ -16,16 +16,24 @@ const uiElements = {
   meterFill: document.getElementById('meterFill'),
   message: document.getElementById('message'),
   finalScore: document.getElementById('finalScore'),
-  timer: document.getElementById('timerValue')
+  timer: document.getElementById('timerValue'),
+  difficultySelect: document.getElementById('difficultySelect')
 };
 
 const playField = document.querySelector('.play-field');
 const drillPlayer = document.getElementById('drillPlayer');
 
+const difficultySettings = {
+  easy: { timer: 30, speedMultiplier: 0.75 },
+  normal: { timer: 60, speedMultiplier: 1 },
+  hard: { timer: 90, speedMultiplier: 1.35 }
+};
+
 const gameState = {
   score: 0,
   progress: 0,
   timeLeft: 60,
+  difficulty: 'normal',
   isDragging: false,
   dragOffset: 0,
   timerId: null,
@@ -71,12 +79,21 @@ function clearObjects() {
   playField.querySelectorAll('.floating-score').forEach(item => item.remove());
 }
 
+function getSelectedDifficulty() {
+  const selectedDifficulty = uiElements.difficultySelect?.value || 'normal';
+  return difficultySettings[selectedDifficulty] ? selectedDifficulty : 'normal';
+}
+
+function getCurrentDifficultySettings() {
+  return difficultySettings[gameState.difficulty] || difficultySettings.normal;
+}
+
 // Reset the game state and return to the gameplay view.
 function resetGame() {
   stopGameplayLoop();
   gameState.score = 0;
   gameState.progress = 0;
-  gameState.timeLeft = 60;
+  gameState.timeLeft = getCurrentDifficultySettings().timer;
   gameState.isDragging = false;
   gameState.isActive = false;
   setMessage('Keep drilling to reach clean water.');
@@ -87,6 +104,7 @@ function resetGame() {
 
 // Start the actual gameplay and begin the timer and object spawning.
 function startGame() {
+  gameState.difficulty = getSelectedDifficulty();
   resetGame();
   gameState.isActive = true;
   startTimer();
@@ -206,7 +224,7 @@ function createCollectible() {
   const collectible = document.createElement('div');
   collectible.className = `game-object ${type.name} ${type.sizeClass}`;
   collectible.dataset.points = type.points;
-  collectible.dataset.speed = type.speed;
+  collectible.dataset.speed = type.speed * getCurrentDifficultySettings().speedMultiplier;
 
   if (type.name === 'jerry-can') {
     collectible.innerHTML = '<img src="img/water-can-transparent.png" alt="Charity Water Jerry can" />';
