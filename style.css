@@ -1,13 +1,19 @@
 :root {
-  --sky: #f4f7fb;
-  --blue: #2e9df7;
-  --deep-blue: #135d9a;
-  --yellow: #ffc907;
-  --green: #4fcb53;
+  --accent: #FFC907;
+  --navy: #003366;
+  --teal: #77A8BB;
+  --cream: #FFF7E1;
+  --ink: #1A1A1A;
+  --peach: #FED8C1;
+  --rust: #BF6C46;
+  --silver: #CBCCD1;
   --white: #ffffff;
-  --text: #1f2f3c;
-  --dark: #4a4a4a;
-  --underground: #606060;
+  --text: #1A1A1A;
+  --deep-blue: #003366;
+  --yellow: #FFC907;
+  --green: #77A8BB;
+  --dark: #1A1A1A;
+  --underground: #4f6b76;
   --rock: #7a7a7a;
 }
 
@@ -23,8 +29,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: linear-gradient(180deg, #eceff2 0%, #dfe5eb 100%);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, var(--cream) 0%, #fefaf0 100%);
+  font-family: 'Proxima Nova', 'Avenir', Georgia;
   color: var(--text);
 }
 
@@ -38,26 +44,27 @@ body {
 .game-shell {
   width: min(90vw, 360px);
   height: min(92vh, 720px);
-  background: #f7f7f7;
+  background: linear-gradient(180deg, #fffdf7 0%, var(--cream) 100%);
   border-radius: 28px;
-  box-shadow: 0 16px 40px rgba(25, 36, 51, 0.22);
+  box-shadow: 0 18px 42px rgba(0, 51, 102, 0.18);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  border: 2px solid rgba(0, 51, 102, 0.08);
 }
 
 .site-footer {
   margin-top: 0.9rem;
   padding: 0.75rem 1rem;
-  background: #ffffff;
+  background: var(--navy);
   border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(23, 50, 77, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.16);
 }
 
 .site-footer a {
-  color: var(--deep-blue);
+  color: var(--cream);
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 0.2rem;
@@ -80,8 +87,8 @@ body {
 }
 
 #startScreen {
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 45%, #4f4f4f 45%, #4f4f4f 100%);
-  color: #ffffff;
+  background: linear-gradient(180deg, var(--cream) 0%, #fffdf6 45%, var(--navy) 45%, var(--navy) 100%);
+  color: var(--cream);
   justify-content: flex-start;
   gap: 1rem;
   padding-top: 1.6rem;
@@ -89,11 +96,11 @@ body {
 }
 
 #startScreen h1 {
-  color: #111111;
+  color: var(--navy);
 }
 
 #startScreen p {
-  color: #ffffff;
+  color: var(--cream);
 }
 
 .title-block {
@@ -107,52 +114,52 @@ body {
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: 0.04em;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 3px 8px rgba(0, 51, 102, 0.16);
 }
 
 .start-subtitle {
   font-size: 1rem;
   font-weight: 600;
-  color: #fefefe;
+  color: var(--cream);
   opacity: 0.95;
   margin-top: 0.35rem;
   display: inline-block;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.16);
+  background: rgba(0, 51, 102, 0.24);
 }
 
 #howToPlayScreen {
-  background: #f2f2f2;
+  background: linear-gradient(180deg, #fffdf8 0%, var(--cream) 100%);
 }
 
 #gameScreen {
-  background: linear-gradient(180deg, #6b6b6b 0%, #4a4a4a 100%);
-  color: #ffffff;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--teal) 100%);
+  color: var(--cream);
   justify-content: flex-start;
 }
 
 #winScreen {
-  background: #4a4a4a;
-  color: #ffffff;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--teal) 100%);
+  color: var(--cream);
   justify-content: center;
 }
 
 #winScreen h2 {
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--cream);
 }
 
 .icon-bubble {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: var(--yellow);
+  background: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 -6px 0 rgba(0, 51, 102, 0.16);
 }
 
 .icon-row {
@@ -169,7 +176,7 @@ body {
   padding: 0.8rem 1rem;
   min-width: 110px;
   color: var(--text);
-  box-shadow: 0 8px 20px rgba(23, 50, 77, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 51, 102, 0.08);
 }
 
 .icon-card .icon {
@@ -204,7 +211,7 @@ li {
   padding: 1rem 1.1rem;
   text-align: left;
   width: 100%;
-  box-shadow: 0 8px 20px rgba(23, 50, 77, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 51, 102, 0.08);
 }
 
 .instructions ul {
@@ -249,8 +256,8 @@ li {
 }
 
 .primary-btn {
-  background: var(--green);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--ink);
   margin-top: 1rem;
 }
 
@@ -263,8 +270,8 @@ li {
 }
 
 .score-card {
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--text);
+  background: rgba(255, 247, 225, 0.95);
+  color: var(--navy);
   border-radius: 14px;
   padding: 0.7rem 0.9rem;
   font-weight: bold;
@@ -273,16 +280,16 @@ li {
 .meter {
   width: 100%;
   height: 18px;
-  background: #cfeffd;
+  background: var(--cream);
   border-radius: 999px;
   overflow: hidden;
-  border: 2px solid #a7d8f0;
+  border: 2px solid rgba(0, 51, 102, 0.2);
 }
 
 .meter-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--blue), var(--green));
+  background: linear-gradient(90deg, var(--accent), var(--teal));
   transition: width 0.2s ease;
 }
 
@@ -395,12 +402,12 @@ li {
 }
 
 .ground-area {
-  background: linear-gradient(180deg, #6a4628 0%, #2f2211 100%);
+  background: linear-gradient(180deg, var(--rust) 0%, #8d4b2f 100%);
   color: var(--white);
   padding: 0.75rem;
   border-radius: 12px;
   font-weight: bold;
-  border: 2px solid #8c6239;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .play-field::after {
@@ -426,7 +433,7 @@ li {
 
 .message {
   font-weight: bold;
-  color: #fefefe;
+  color: var(--cream);
 }
 
 @keyframes float {
