@@ -459,11 +459,16 @@ li {
 
 @media (min-width: 768px) {
   body {
-    padding: 2rem;
+    padding: 2rem 4rem;
+  }
+
+  .page-wrapper {
+    width: min(100%, 1200px);
   }
 
   .game-shell {
-    width: 360px;
+    width: min(50vw, 560px);
+    min-width: 420px;
     height: 700px;
     margin: 0 auto;
     border-radius: 36px;
