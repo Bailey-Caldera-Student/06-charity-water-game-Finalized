@@ -29,6 +29,29 @@ const difficultySettings = {
   hard: { timer: 90, speedMultiplier: 1.35 }
 };
 
+const soundFiles = {
+  water: 'sound effect/freesound_community-water-drop-85731.mp3',
+  'jerry-can': 'sound effect/freesound_community-water-drop-85731.mp3',
+  boulder: 'sound effect/freesound_community-rock-destroy-6409.mp3'
+};
+
+function playObjectSound(type) {
+  const source = soundFiles[type];
+  if (!source) {
+    return;
+  }
+
+  const sound = new Audio(source);
+  sound.volume = 0.35;
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+  setTimeout(() => {
+    if (!sound.paused) {
+      sound.pause();
+    }
+  }, 1000);
+}
+
 const gameState = {
   score: 0,
   progress: 0,
@@ -223,6 +246,7 @@ function createCollectible() {
   const type = collectibleTypes[Math.floor(Math.random() * collectibleTypes.length)];
   const collectible = document.createElement('div');
   collectible.className = `game-object ${type.name} ${type.sizeClass}`;
+  collectible.dataset.type = type.name;
   collectible.dataset.points = type.points;
   collectible.dataset.speed = type.speed * getCurrentDifficultySettings().speedMultiplier;
 
@@ -306,6 +330,8 @@ function checkCollisions() {
 
     if (hit) {
       const points = Number(collectible.dataset.points);
+      const type = collectible.dataset.type;
+      playObjectSound(type);
       gameState.score = Math.max(0, gameState.score + points);
       updateHud();
       showFloatingText(collectibleRect.left, collectibleRect.top, points);
