@@ -1,20 +1,19 @@
 :root {
-  --accent: #FFC907;
-  --navy: #003366;
-  --teal: #77A8BB;
+  --yellow: #FFC907;
+  --blue: #2E9DF7;
+  --light-blue: #8BD1CB;
+  --green: #4FCB53;
+  --orange: #FF902A;
+  --red: #F5402C;
+  --dark-green: #159A48;
+  --pink: #F16061;
   --cream: #FFF7E1;
+  --navy: #1A1A1A;
   --ink: #1A1A1A;
-  --peach: #FED8C1;
-  --rust: #BF6C46;
-  --silver: #CBCCD1;
   --white: #ffffff;
   --text: #1A1A1A;
-  --deep-blue: #003366;
-  --yellow: #FFC907;
-  --green: #77A8BB;
-  --dark: #1A1A1A;
-  --underground: #4f6b76;
-  --rock: #7a7a7a;
+  --soft-blue: #eaf7ff;
+  --panel-shadow: rgba(0, 45, 120, 0.14);
 }
 
 * {
@@ -29,8 +28,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: linear-gradient(180deg, var(--cream) 0%, #fefaf0 100%);
-  font-family: 'Proxima Nova', 'Avenir', Georgia;
+  background: linear-gradient(180deg, var(--cream) 0%, #f8fbff 100%);
+  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif;
   color: var(--text);
 }
 
@@ -44,27 +43,27 @@ body {
 .game-shell {
   width: min(90vw, 360px);
   height: min(92vh, 720px);
-  background: linear-gradient(180deg, #fffdf7 0%, var(--cream) 100%);
+  background: linear-gradient(180deg, var(--white) 0%, var(--soft-blue) 100%);
   border-radius: 28px;
-  box-shadow: 0 18px 42px rgba(0, 51, 102, 0.18);
+  box-shadow: 0 18px 42px var(--panel-shadow);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 2px solid rgba(0, 51, 102, 0.08);
+  border: 2px solid rgba(46, 157, 247, 0.16);
 }
 
 .site-footer {
   margin-top: 0.9rem;
   padding: 0.75rem 1rem;
-  background: var(--navy);
+  background: var(--blue);
   border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(0, 51, 102, 0.16);
+  box-shadow: 0 6px 16px rgba(46, 157, 247, 0.18);
 }
 
 .site-footer a {
-  color: var(--cream);
+  color: var(--white);
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 0.2rem;
@@ -87,8 +86,8 @@ body {
 }
 
 #startScreen {
-  background: linear-gradient(180deg, var(--cream) 0%, #fffdf6 45%, var(--navy) 45%, var(--navy) 100%);
-  color: var(--cream);
+  background: linear-gradient(180deg, var(--yellow) 0%, #fff4bb 45%, var(--blue) 45%, var(--blue) 100%);
+  color: var(--white);
   justify-content: flex-start;
   gap: 1rem;
   padding-top: 1.6rem;
@@ -100,7 +99,7 @@ body {
 }
 
 #startScreen p {
-  color: var(--cream);
+  color: var(--white);
 }
 
 .title-block {
@@ -130,18 +129,18 @@ body {
 }
 
 #howToPlayScreen {
-  background: linear-gradient(180deg, #fffdf8 0%, var(--cream) 100%);
+  background: linear-gradient(180deg, var(--soft-blue) 0%, var(--white) 100%);
 }
 
 #gameScreen {
-  background: linear-gradient(180deg, var(--navy) 0%, var(--teal) 100%);
-  color: var(--cream);
+  background: linear-gradient(180deg, var(--blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
   justify-content: flex-start;
 }
 
 #winScreen {
-  background: linear-gradient(180deg, var(--navy) 0%, var(--teal) 100%);
-  color: var(--cream);
+  background: linear-gradient(180deg, var(--blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
   justify-content: center;
 }
 
@@ -154,12 +153,12 @@ body {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--yellow);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  box-shadow: inset 0 -6px 0 rgba(0, 51, 102, 0.16);
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.12);
 }
 
 .icon-row {
@@ -256,8 +255,8 @@ li {
 }
 
 .primary-btn {
-  background: var(--accent);
-  color: var(--ink);
+  background: var(--yellow);
+  color: var(--navy);
   margin-top: 1rem;
 }
 
@@ -270,7 +269,7 @@ li {
 }
 
 .score-card {
-  background: rgba(255, 247, 225, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--navy);
   border-radius: 14px;
   padding: 0.7rem 0.9rem;
@@ -280,16 +279,16 @@ li {
 .meter {
   width: 100%;
   height: 18px;
-  background: var(--cream);
+  background: rgba(46, 157, 247, 0.18);
   border-radius: 999px;
   overflow: hidden;
-  border: 2px solid rgba(0, 51, 102, 0.2);
+  border: 2px solid rgba(46, 157, 247, 0.32);
 }
 
 .meter-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--accent), var(--teal));
+  background: linear-gradient(90deg, var(--yellow), var(--blue));
   transition: width 0.2s ease;
 }
 
@@ -402,12 +401,12 @@ li {
 }
 
 .ground-area {
-  background: linear-gradient(180deg, var(--rust) 0%, #8d4b2f 100%);
+  background: linear-gradient(180deg, var(--orange) 0%, #e85e27 100%);
   color: var(--white);
   padding: 0.75rem;
   border-radius: 12px;
   font-weight: bold;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .play-field::after {
